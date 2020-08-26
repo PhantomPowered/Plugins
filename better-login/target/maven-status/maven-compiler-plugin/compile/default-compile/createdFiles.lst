@@ -1,6 +1,0 @@
-com\github\derrop\proxy\plugins\betterlogin\connection\LoginServiceWorldDataProvider.class
-com\github\derrop\proxy\plugins\betterlogin\BetterLoginPlugin.class
-com\github\derrop\proxy\plugins\betterlogin\connection\LoginServiceConnection.class
-com\github\derrop\proxy\plugins\betterlogin\LoginPrepareListener.class
-com\github\derrop\proxy\plugins\betterlogin\connection\LoginPlayerAbilities.class
-com\github\derrop\proxy\plugins\betterlogin\connection\LoginBlockAccess.class
