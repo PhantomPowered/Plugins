@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.29">
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\player-warning\src\main\java\com\github\derrop\proxy\plugins\pwarner\command\CommandPlayerWarns.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\player-warning\src\main\java\com\github\derrop\proxy\plugins\pwarner\listener\WarnListener.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\player-warning\src\main\java\com\github\derrop\proxy\plugins\pwarner\PWarnerPlugin.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\player-warning\src\main\java\com\github\derrop\proxy\plugins\pwarner\storage\PlayerWarningData.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\player-warning\src\main\java\com\github\derrop\proxy\plugins\pwarner\storage\PlayerWarningDatabase.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\player-warning\src\main\java\com\github\derrop\proxy\plugins\pwarner\storage\WarnedEquipmentSlot.java">
+</file>
+</checkstyle>

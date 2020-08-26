@@ -1,0 +1,10 @@
+com\github\derrop\proxy\plugins\CommandReplay.class
+com\github\derrop\proxy\plugins\replay\ReplayPacket.class
+com\github\derrop\proxy\plugins\replay\ReplayNotFoundException.class
+com\github\derrop\proxy\plugins\ReplayPlugin.class
+com\github\derrop\proxy\plugins\replay\ReplayOutputStream.class
+com\github\derrop\proxy\plugins\replay\ReplayIDs.class
+com\github\derrop\proxy\plugins\replay\ReplayInputStream.class
+com\github\derrop\proxy\plugins\replay\ReplaySystem.class
+com\github\derrop\proxy\plugins\replay\ReplaySystem$1.class
+com\github\derrop\proxy\plugins\replay\ReplayInfo.class

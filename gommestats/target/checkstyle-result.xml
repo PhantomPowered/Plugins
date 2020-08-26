@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.29">
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\clan\ClanInfo.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\clan\ClanInfoProvider.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\clan\ClanMember.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\clan\ClanMessageRegistry.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\clan\parser\ClanId.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\clan\parser\ClanParser.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\clan\parser\PendingClanMember.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\clan\parser\PendingClanRequest.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\command\CommandMatch.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\command\CommandSpectatorlist.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\events\GommeMatchActionEvent.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\events\GommeMatchDetectEvent.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\events\GommeMatchEvent.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\events\GommeServerSwitchEvent.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\GommeConstants.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\GommeServerType.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\GommeStatsCore.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\GommeStatsPlugin.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\listener\GommeEventListener.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\match\event\bedwars\BedDestroyEvent.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\match\event\bedwars\BedJoinEvent.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\match\event\bedwars\BedLeaveEvent.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\match\event\bedwars\BedWarsTryDestroyOwnBedEvent.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\match\event\cores\CoreDestroyedEvent.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\match\event\cores\CoreJoinEvent.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\match\event\cores\CoreLeaveEvent.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\match\event\global\match\MapSelectedEvent.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\match\event\global\match\MatchBeginEvent.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\match\event\global\match\MatchEndDiedEvent.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\match\event\global\match\MatchEndDisconnectedEvent.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\match\event\global\match\MatchEndFinishedEvent.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\match\event\global\match\MatchEndLeftEvent.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\match\event\global\match\TeamOutEvent.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\match\event\global\player\PlayerChatEvent.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\match\event\global\player\PlayerDiedEvent.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\match\event\global\player\PlayerJoinLobbyEvent.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\match\event\global\player\PlayerKilledEvent.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\match\event\global\player\PlayerLeaveInGameMultiEvent.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\match\event\global\player\PlayerLeaveInGameSingleEvent.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\match\event\global\player\PlayerLeaveLobbyEvent.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\match\event\global\player\spectator\SpectatorJoinEvent.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\match\event\global\player\spectator\SpectatorLeaveEvent.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\match\event\MatchEvent.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\match\GommeMatchListener.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\match\MatchAction.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\match\MatchEventSerializer.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\match\MatchInfo.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\match\MatchManager.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\match\MatchTeam.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\messages\defaults\game\bedwars\BedWarsMessageBedDestroyed.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\messages\defaults\game\bedwars\BedWarsMessageCannotDestroyOwnBed.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\messages\defaults\game\bedwars\BedWarsMessageGameBegin.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\messages\defaults\game\bedwars\BedWarsMessageGameEndDied.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\messages\defaults\game\bedwars\BedWarsMessageGameEndFinished.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\messages\defaults\game\bedwars\BedWarsMessageGlobalChatMessage.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\messages\defaults\game\bedwars\BedWarsMessageMapSelected.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\messages\defaults\game\bedwars\BedWarsMessagePlayerDied.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\messages\defaults\game\bedwars\BedWarsMessagePlayerJoinLobby.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\messages\defaults\game\bedwars\BedWarsMessagePlayerKilled.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\messages\defaults\game\bedwars\BedWarsMessagePlayerLeaveInGameMulti.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\messages\defaults\game\bedwars\BedWarsMessagePlayerLeaveInGameSingle.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\messages\defaults\game\bedwars\BedWarsMessagePlayerLeaveLobby.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\messages\defaults\game\bedwars\BedWarsMessageTeamChatMessage.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\messages\defaults\game\bedwars\BedWarsMessageTeamOut.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\messages\defaults\game\BedWarsMessage.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\messages\defaults\game\GameMessageRegistry.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\messages\defaults\game\ReflectiveGameMessageRegistrar.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\messages\defaults\game\SingleGameMessageRegistrar.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\messages\defaults\game\SpecificGameMessageRegistrar.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\messages\defaults\game\TeamRegistry.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\messages\defaults\PartyMessageRegistry.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\messages\Language.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\messages\LanguageDetector.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\messages\MessageRegistry.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\messages\MessageType.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\messages\RegisteredMessage.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\parse\MatchParser.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\player\PlayerData.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\player\PlayerDataProvider.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\player\PlayerStatistics.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\player\Tag.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\secret\GommeSpectatorDetector.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\gommestats\src\main\java\com\github\derrop\proxy\plugins\gomme\secret\SpectatorEntry.java">
+</file>
+</checkstyle>

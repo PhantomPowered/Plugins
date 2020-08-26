@@ -1,0 +1,6 @@
+com\github\derrop\proxy\plugins\pwarner\storage\WarnedEquipmentSlot.class
+com\github\derrop\proxy\plugins\pwarner\listener\WarnListener.class
+com\github\derrop\proxy\plugins\pwarner\storage\PlayerWarningData.class
+com\github\derrop\proxy\plugins\pwarner\storage\PlayerWarningDatabase.class
+com\github\derrop\proxy\plugins\pwarner\PWarnerPlugin.class
+com\github\derrop\proxy\plugins\pwarner\command\CommandPlayerWarns.class

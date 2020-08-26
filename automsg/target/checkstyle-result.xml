@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.29">
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\automsg\src\main\java\com\github\derrop\plugins\automsg\AutoMsgCommand.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\automsg\src\main\java\com\github\derrop\plugins\automsg\AutoMsgDatabase.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\automsg\src\main\java\com\github\derrop\plugins\automsg\AutoMsgListener.java">
+</file>
+<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\automsg\src\main\java\com\github\derrop\plugins\automsg\AutoMsgPlugin.java">
+</file>
+</checkstyle>

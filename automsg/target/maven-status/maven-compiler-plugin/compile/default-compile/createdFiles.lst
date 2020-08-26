@@ -1,0 +1,4 @@
+com\github\derrop\plugins\automsg\AutoMsgCommand.class
+com\github\derrop\plugins\automsg\AutoMsgListener.class
+com\github\derrop\plugins\automsg\AutoMsgPlugin.class
+com\github\derrop\plugins\automsg\AutoMsgDatabase.class
