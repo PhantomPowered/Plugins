@@ -1,0 +1,17 @@
+dependency-reduced-pom.xml
+
+.idea/
+.mvn/wrapper/maven-wrapper.jar
+*.iml
+*.ipr
+*.iws
+
+target/
+
+/logs/
+/replays/
+/database/
+/plugins/
+
+config.json
+permissions.json

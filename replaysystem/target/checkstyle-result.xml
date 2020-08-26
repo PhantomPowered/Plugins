@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="8.29">
-<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\replaysystem\src\main\java\com\github\derrop\proxy\plugins\CommandReplay.java">
+<file name="D:\Dev\Projekte\Phantom\PublicPlugins\replaysystem\src\main\java\com\github\derrop\proxy\plugins\CommandReplay.java">
 </file>
-<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\replaysystem\src\main\java\com\github\derrop\proxy\plugins\replay\ReplayIDs.java">
+<file name="D:\Dev\Projekte\Phantom\PublicPlugins\replaysystem\src\main\java\com\github\derrop\proxy\plugins\replay\ReplayIDs.java">
 </file>
-<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\replaysystem\src\main\java\com\github\derrop\proxy\plugins\replay\ReplayInfo.java">
+<file name="D:\Dev\Projekte\Phantom\PublicPlugins\replaysystem\src\main\java\com\github\derrop\proxy\plugins\replay\ReplayInfo.java">
 </file>
-<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\replaysystem\src\main\java\com\github\derrop\proxy\plugins\replay\ReplayInputStream.java">
+<file name="D:\Dev\Projekte\Phantom\PublicPlugins\replaysystem\src\main\java\com\github\derrop\proxy\plugins\replay\ReplayInputStream.java">
 </file>
-<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\replaysystem\src\main\java\com\github\derrop\proxy\plugins\replay\ReplayNotFoundException.java">
+<file name="D:\Dev\Projekte\Phantom\PublicPlugins\replaysystem\src\main\java\com\github\derrop\proxy\plugins\replay\ReplayNotFoundException.java">
 </file>
-<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\replaysystem\src\main\java\com\github\derrop\proxy\plugins\replay\ReplayOutputStream.java">
+<file name="D:\Dev\Projekte\Phantom\PublicPlugins\replaysystem\src\main\java\com\github\derrop\proxy\plugins\replay\ReplayOutputStream.java">
 </file>
-<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\replaysystem\src\main\java\com\github\derrop\proxy\plugins\replay\ReplayPacket.java">
+<file name="D:\Dev\Projekte\Phantom\PublicPlugins\replaysystem\src\main\java\com\github\derrop\proxy\plugins\replay\ReplayPacket.java">
 </file>
-<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\replaysystem\src\main\java\com\github\derrop\proxy\plugins\replay\ReplaySystem.java">
+<file name="D:\Dev\Projekte\Phantom\PublicPlugins\replaysystem\src\main\java\com\github\derrop\proxy\plugins\replay\ReplaySystem.java">
 </file>
-<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\replaysystem\src\main\java\com\github\derrop\proxy\plugins\ReplayPlugin.java">
+<file name="D:\Dev\Projekte\Phantom\PublicPlugins\replaysystem\src\main\java\com\github\derrop\proxy\plugins\ReplayPlugin.java">
 </file>
 </checkstyle>

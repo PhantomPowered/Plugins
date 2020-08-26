@@ -13,13 +13,4 @@
     <artifactId>pathfinding</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <dependencies>
-        <dependency>
-            <groupId>com.github.derrop.minecraft.proxy</groupId>
-            <artifactId>proxy-api</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <scope>provided</scope>
-        </dependency>
-    </dependencies>
-
 </project>
