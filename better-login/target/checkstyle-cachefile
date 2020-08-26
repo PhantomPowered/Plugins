@@ -1,8 +1,8 @@
-#Tue Aug 25 22:42:14 CEST 2020
-D\:\\Dev\\Projekte\\MCProxy\\proxy-plugins\\better-login\\src\\main\\java\\com\\github\\derrop\\proxy\\plugins\\betterlogin\\connection\\LoginPlayerAbilities.java=1593211983156
-configuration*?=87B00E403DE63F8E5CC5DCEF5D9DC852633DCBDE
-D\:\\Dev\\Projekte\\MCProxy\\proxy-plugins\\better-login\\src\\main\\java\\com\\github\\derrop\\proxy\\plugins\\betterlogin\\connection\\LoginServiceWorldDataProvider.java=1593461641097
-D\:\\Dev\\Projekte\\MCProxy\\proxy-plugins\\better-login\\src\\main\\java\\com\\github\\derrop\\proxy\\plugins\\betterlogin\\LoginPrepareListener.java=1598371758219
-D\:\\Dev\\Projekte\\MCProxy\\proxy-plugins\\better-login\\src\\main\\java\\com\\github\\derrop\\proxy\\plugins\\betterlogin\\connection\\LoginBlockAccess.java=1598371294191
-D\:\\Dev\\Projekte\\MCProxy\\proxy-plugins\\better-login\\src\\main\\java\\com\\github\\derrop\\proxy\\plugins\\betterlogin\\connection\\LoginServiceConnection.java=1598388116373
-D\:\\Dev\\Projekte\\MCProxy\\proxy-plugins\\better-login\\src\\main\\java\\com\\github\\derrop\\proxy\\plugins\\betterlogin\\BetterLoginPlugin.java=1598371294190
+#Wed Aug 26 21:17:34 CEST 2020
+configuration*?=3A486E7127AC0A8A6057B2D4B6534F302EBB7E4E
+D\:\\Dev\\Projekte\\Phantom\\PublicPlugins\\better-login\\src\\main\\java\\com\\github\\derrop\\proxy\\plugins\\betterlogin\\connection\\LoginPlayerAbilities.java=1593211983156
+D\:\\Dev\\Projekte\\Phantom\\PublicPlugins\\better-login\\src\\main\\java\\com\\github\\derrop\\proxy\\plugins\\betterlogin\\connection\\LoginServiceWorldDataProvider.java=1593461641097
+D\:\\Dev\\Projekte\\Phantom\\PublicPlugins\\better-login\\src\\main\\java\\com\\github\\derrop\\proxy\\plugins\\betterlogin\\connection\\LoginServiceConnection.java=1598388324983
+D\:\\Dev\\Projekte\\Phantom\\PublicPlugins\\better-login\\src\\main\\java\\com\\github\\derrop\\proxy\\plugins\\betterlogin\\connection\\LoginBlockAccess.java=1598371294191
+D\:\\Dev\\Projekte\\Phantom\\PublicPlugins\\better-login\\src\\main\\java\\com\\github\\derrop\\proxy\\plugins\\betterlogin\\LoginPrepareListener.java=1598371758219
+D\:\\Dev\\Projekte\\Phantom\\PublicPlugins\\better-login\\src\\main\\java\\com\\github\\derrop\\proxy\\plugins\\betterlogin\\BetterLoginPlugin.java=1598371294190

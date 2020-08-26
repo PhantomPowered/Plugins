@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="8.29">
-<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\pathfinding\src\main\java\com\github\derrop\proxy\plugins\pathfinding\command\CommandPath.java">
+<file name="D:\Dev\Projekte\Phantom\PublicPlugins\pathfinding\src\main\java\com\github\derrop\proxy\plugins\pathfinding\command\CommandPath.java">
 </file>
-<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\pathfinding\src\main\java\com\github\derrop\proxy\plugins\pathfinding\finder\astar\AStarPathFinder.java">
+<file name="D:\Dev\Projekte\Phantom\PublicPlugins\pathfinding\src\main\java\com\github\derrop\proxy\plugins\pathfinding\finder\astar\AStarPathFinder.java">
 </file>
-<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\pathfinding\src\main\java\com\github\derrop\proxy\plugins\pathfinding\finder\geometric\CirclePathFinder.java">
+<file name="D:\Dev\Projekte\Phantom\PublicPlugins\pathfinding\src\main\java\com\github\derrop\proxy\plugins\pathfinding\finder\geometric\CirclePathFinder.java">
 </file>
-<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\pathfinding\src\main\java\com\github\derrop\proxy\plugins\pathfinding\finder\geometric\GeometricPathFinder.java">
+<file name="D:\Dev\Projekte\Phantom\PublicPlugins\pathfinding\src\main\java\com\github\derrop\proxy\plugins\pathfinding\finder\geometric\GeometricPathFinder.java">
 </file>
-<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\pathfinding\src\main\java\com\github\derrop\proxy\plugins\pathfinding\finder\geometric\RectanglePathFinder.java">
+<file name="D:\Dev\Projekte\Phantom\PublicPlugins\pathfinding\src\main\java\com\github\derrop\proxy\plugins\pathfinding\finder\geometric\RectanglePathFinder.java">
 </file>
-<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\pathfinding\src\main\java\com\github\derrop\proxy\plugins\pathfinding\finder\PathFindInteraction.java">
+<file name="D:\Dev\Projekte\Phantom\PublicPlugins\pathfinding\src\main\java\com\github\derrop\proxy\plugins\pathfinding\finder\PathFindInteraction.java">
 </file>
-<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\pathfinding\src\main\java\com\github\derrop\proxy\plugins\pathfinding\Path.java">
+<file name="D:\Dev\Projekte\Phantom\PublicPlugins\pathfinding\src\main\java\com\github\derrop\proxy\plugins\pathfinding\Path.java">
 </file>
-<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\pathfinding\src\main\java\com\github\derrop\proxy\plugins\pathfinding\PathFindingPlugin.java">
+<file name="D:\Dev\Projekte\Phantom\PublicPlugins\pathfinding\src\main\java\com\github\derrop\proxy\plugins\pathfinding\PathFindingPlugin.java">
 </file>
-<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\pathfinding\src\main\java\com\github\derrop\proxy\plugins\pathfinding\PathPoint.java">
+<file name="D:\Dev\Projekte\Phantom\PublicPlugins\pathfinding\src\main\java\com\github\derrop\proxy\plugins\pathfinding\PathPoint.java">
 </file>
-<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\pathfinding\src\main\java\com\github\derrop\proxy\plugins\pathfinding\provider\DefaultPathProvider.java">
+<file name="D:\Dev\Projekte\Phantom\PublicPlugins\pathfinding\src\main\java\com\github\derrop\proxy\plugins\pathfinding\provider\DefaultPathProvider.java">
 </file>
-<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\pathfinding\src\main\java\com\github\derrop\proxy\plugins\pathfinding\provider\PathProvider.java">
+<file name="D:\Dev\Projekte\Phantom\PublicPlugins\pathfinding\src\main\java\com\github\derrop\proxy\plugins\pathfinding\provider\PathProvider.java">
 </file>
-<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\pathfinding\src\main\java\com\github\derrop\proxy\plugins\pathfinding\walk\DefaultPathWalker.java">
+<file name="D:\Dev\Projekte\Phantom\PublicPlugins\pathfinding\src\main\java\com\github\derrop\proxy\plugins\pathfinding\walk\DefaultPathWalker.java">
 </file>
-<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\pathfinding\src\main\java\com\github\derrop\proxy\plugins\pathfinding\walk\DirectWalkablePath.java">
+<file name="D:\Dev\Projekte\Phantom\PublicPlugins\pathfinding\src\main\java\com\github\derrop\proxy\plugins\pathfinding\walk\DirectWalkablePath.java">
 </file>
-<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\pathfinding\src\main\java\com\github\derrop\proxy\plugins\pathfinding\walk\FollowingWalkablePath.java">
+<file name="D:\Dev\Projekte\Phantom\PublicPlugins\pathfinding\src\main\java\com\github\derrop\proxy\plugins\pathfinding\walk\FollowingWalkablePath.java">
 </file>
-<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\pathfinding\src\main\java\com\github\derrop\proxy\plugins\pathfinding\walk\PathWalker.java">
+<file name="D:\Dev\Projekte\Phantom\PublicPlugins\pathfinding\src\main\java\com\github\derrop\proxy\plugins\pathfinding\walk\PathWalker.java">
 </file>
-<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\pathfinding\src\main\java\com\github\derrop\proxy\plugins\pathfinding\walk\WalkablePath.java">
+<file name="D:\Dev\Projekte\Phantom\PublicPlugins\pathfinding\src\main\java\com\github\derrop\proxy\plugins\pathfinding\walk\WalkablePath.java">
 </file>
 </checkstyle>

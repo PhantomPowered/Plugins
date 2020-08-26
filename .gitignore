@@ -7,11 +7,3 @@ dependency-reduced-pom.xml
 *.iws
 
 target/
-
-/logs/
-/replays/
-/database/
-/plugins/
-
-config.json
-permissions.json

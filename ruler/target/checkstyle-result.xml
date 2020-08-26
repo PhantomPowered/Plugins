@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="8.29">
-<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\ruler\src\main\java\com\github\derrop\plugins\ruler\RulerListener.java">
+<file name="D:\Dev\Projekte\Phantom\PublicPlugins\ruler\src\main\java\com\github\derrop\plugins\ruler\RulerListener.java">
 </file>
-<file name="D:\Dev\Projekte\MCProxy\proxy-plugins\ruler\src\main\java\com\github\derrop\plugins\ruler\RulerPlugin.java">
+<file name="D:\Dev\Projekte\Phantom\PublicPlugins\ruler\src\main\java\com\github\derrop\plugins\ruler\RulerPlugin.java">
 </file>
 </checkstyle>
