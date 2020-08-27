@@ -297,9 +297,10 @@ public class ReplaySystem { // TODO
                         new DataWatcherEntry(0, 0, (byte) 0)
                 )
         ));
-        receiver.sendPacket(proxyClient.getEntityMetadata());
+        //receiver.sendPacket(proxyClient.getEntityMetadata());
 
-        proxyClient.setClientPacketHandler(packet -> {
+        // TODO ServiceConnection#addViewer(PacketSender)
+        /*proxyClient.setClientPacketHandler(packet -> {
             if (packet instanceof PositionedPacket) {
                 PositionedPacket positionedPacket = (PositionedPacket) packet;
                 receiver.sendPacket(new PacketPlayServerEntityTeleport(proxyClient.getEntityId(),
@@ -308,12 +309,12 @@ public class ReplaySystem { // TODO
                         connection.isOnGround()
                 ));
             }
-        });
+        });*/
         proxyClient.getPacketCache().setPacketHandler((buf, packetId) -> receiver.sendPacket(buf));
         proxyClient.setDisconnectionHandler(() -> {
             replayOutputStream.close();
             proxyClient.setDisconnectionHandler(null);
-            proxyClient.setClientPacketHandler(null);
+            //proxyClient.setClientPacketHandler(null);
             proxyClient.getPacketCache().setPacketHandler(null);
         });
 

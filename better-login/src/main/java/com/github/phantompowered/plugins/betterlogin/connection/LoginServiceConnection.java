@@ -1,11 +1,17 @@
 package com.github.phantompowered.plugins.betterlogin.connection;
 
+import com.github.phantompowered.plugins.betterlogin.LoginPrepareListener;
 import com.github.phantompowered.proxy.api.block.BlockAccess;
+import com.github.phantompowered.proxy.api.block.Facing;
 import com.github.phantompowered.proxy.api.block.Material;
 import com.github.phantompowered.proxy.api.chat.ChatMessageType;
-import com.github.phantompowered.proxy.api.connection.*;
+import com.github.phantompowered.proxy.api.connection.ProtocolState;
+import com.github.phantompowered.proxy.api.connection.ServiceConnection;
+import com.github.phantompowered.proxy.api.connection.ServiceInventory;
+import com.github.phantompowered.proxy.api.connection.ServiceWorldDataProvider;
 import com.github.phantompowered.proxy.api.entity.types.Entity;
 import com.github.phantompowered.proxy.api.location.Location;
+import com.github.phantompowered.proxy.api.location.Vector;
 import com.github.phantompowered.proxy.api.network.NetworkAddress;
 import com.github.phantompowered.proxy.api.network.Packet;
 import com.github.phantompowered.proxy.api.player.Player;
@@ -20,7 +26,6 @@ import com.github.phantompowered.proxy.api.task.Task;
 import com.github.phantompowered.proxy.api.task.TaskFutureListener;
 import com.github.phantompowered.proxy.api.task.util.TaskUtil;
 import com.github.phantompowered.proxy.connection.player.DefaultPlayer;
-import com.github.phantompowered.plugins.betterlogin.LoginPrepareListener;
 import com.github.phantompowered.proxy.protocol.play.server.PacketPlayServerLogin;
 import com.github.phantompowered.proxy.protocol.play.server.PacketPlayServerPlayerInfo;
 import com.github.phantompowered.proxy.protocol.play.server.player.PacketPlayServerPlayerAbilities;
@@ -123,11 +128,6 @@ public class LoginServiceConnection implements ServiceConnection, Entity.Callabl
     @Override
     public @NotNull Location getLocation() {
         return LoginPrepareListener.SPAWN.clone();
-    }
-
-    @Override
-    public InteractiveServiceConnection interactive() {
-        return null;
     }
 
     @Override
@@ -426,5 +426,60 @@ public class LoginServiceConnection implements ServiceConnection, Entity.Callabl
 
     @Override
     public void handleEntityPacket(@NotNull Packet packet) {
+    }
+
+    @Override
+    public void teleport(@NotNull Location location) {
+
+    }
+
+    @Override
+    public void breakBlock(Location location, Facing facing) {
+
+    }
+
+    @Override
+    public void performAirLeftClick() {
+
+    }
+
+    @Override
+    public void performEntityLeftClick(@NotNull Entity entity) {
+
+    }
+
+    @Override
+    public void performBlockLeftClick(@NotNull Location location, @NotNull Facing facing) {
+
+    }
+
+    @Override
+    public void performAirRightClick() {
+
+    }
+
+    @Override
+    public void performEntityRightClick(@NotNull Entity entity, @NotNull Vector vector) {
+
+    }
+
+    @Override
+    public void performBlockRightClick(@NotNull Location location, @NotNull Facing facing, @NotNull Vector vector) {
+
+    }
+
+    @Override
+    public void toggleSneaking(boolean b) {
+
+    }
+
+    @Override
+    public void toggleSprinting(boolean b) {
+
+    }
+
+    @Override
+    public void openInventory() {
+
     }
 }
