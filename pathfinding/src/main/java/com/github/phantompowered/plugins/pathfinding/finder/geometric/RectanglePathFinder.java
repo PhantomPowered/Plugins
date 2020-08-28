@@ -25,7 +25,7 @@
 package com.github.phantompowered.plugins.pathfinding.finder.geometric;
 
 import com.github.phantompowered.proxy.api.block.BlockAccess;
-import com.github.phantompowered.proxy.api.block.Material;
+import com.github.phantompowered.proxy.api.block.material.Material;
 import com.github.phantompowered.proxy.api.location.Location;
 import com.github.phantompowered.plugins.pathfinding.PathPoint;
 import org.jetbrains.annotations.NotNull;

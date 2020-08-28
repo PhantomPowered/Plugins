@@ -3,7 +3,7 @@ package com.github.phantompowered.plugins.betterlogin.connection;
 import com.github.phantompowered.plugins.betterlogin.LoginPrepareListener;
 import com.github.phantompowered.proxy.api.block.BlockAccess;
 import com.github.phantompowered.proxy.api.block.Facing;
-import com.github.phantompowered.proxy.api.block.Material;
+import com.github.phantompowered.proxy.api.block.material.Material;
 import com.github.phantompowered.proxy.api.chat.ChatMessageType;
 import com.github.phantompowered.proxy.api.connection.ProtocolState;
 import com.github.phantompowered.proxy.api.connection.ServiceConnection;

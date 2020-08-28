@@ -3,7 +3,7 @@ package com.github.phantompowered.plugins.betterlogin.connection;
 import com.github.phantompowered.proxy.api.block.BlockAccess;
 import com.github.phantompowered.proxy.api.block.BlockConsumer;
 import com.github.phantompowered.proxy.api.block.BlockStateRegistry;
-import com.github.phantompowered.proxy.api.block.Material;
+import com.github.phantompowered.proxy.api.block.material.Material;
 import com.github.phantompowered.proxy.api.location.Location;
 import com.github.phantompowered.proxy.api.location.Vector;
 import com.github.phantompowered.proxy.connection.player.DefaultPlayer;

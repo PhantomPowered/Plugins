@@ -1,7 +1,7 @@
 package com.github.phantompowered.plugins.betterlogin;
 
 import com.github.phantompowered.plugins.betterlogin.connection.LoginServiceConnection;
-import com.github.phantompowered.proxy.api.block.Material;
+import com.github.phantompowered.proxy.api.block.material.Material;
 import com.github.phantompowered.proxy.api.event.annotation.Listener;
 import com.github.phantompowered.proxy.api.events.connection.player.*;
 import com.github.phantompowered.proxy.api.item.ItemStack;

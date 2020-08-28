@@ -1,6 +1,6 @@
 package com.github.phantompowered.plugins.pathfinding.command;
 
-import com.github.phantompowered.proxy.api.block.Material;
+import com.github.phantompowered.proxy.api.block.material.Material;
 import com.github.phantompowered.proxy.api.command.basic.NonTabCompleteableCommandCallback;
 import com.github.phantompowered.proxy.api.command.exception.CommandExecutionException;
 import com.github.phantompowered.proxy.api.command.result.CommandResult;

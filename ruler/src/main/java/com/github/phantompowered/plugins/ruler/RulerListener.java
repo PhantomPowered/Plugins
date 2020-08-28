@@ -1,6 +1,6 @@
 package com.github.phantompowered.plugins.ruler;
 
-import com.github.phantompowered.proxy.api.block.Material;
+import com.github.phantompowered.proxy.api.block.material.Material;
 import com.github.phantompowered.proxy.api.connection.ServiceConnection;
 import com.github.phantompowered.proxy.api.entity.PlayerInfo;
 import com.github.phantompowered.proxy.api.entity.types.Entity;

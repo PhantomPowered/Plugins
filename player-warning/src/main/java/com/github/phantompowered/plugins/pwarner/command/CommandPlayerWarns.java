@@ -1,6 +1,6 @@
 package com.github.phantompowered.plugins.pwarner.command;
 
-import com.github.phantompowered.proxy.api.block.Material;
+import com.github.phantompowered.proxy.api.block.material.Material;
 import com.github.phantompowered.proxy.api.chat.ChatColor;
 import com.github.phantompowered.proxy.api.command.basic.NonTabCompleteableCommandCallback;
 import com.github.phantompowered.proxy.api.command.exception.CommandExecutionException;

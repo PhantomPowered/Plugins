@@ -1,6 +1,6 @@
 package com.github.phantompowered.plugins.pwarner.storage;
 
-import com.github.phantompowered.proxy.api.block.Material;
+import com.github.phantompowered.proxy.api.block.material.Material;
 import com.github.phantompowered.proxy.api.chat.ChatColor;
 import com.github.phantompowered.proxy.api.player.inventory.EquipmentSlot;
 

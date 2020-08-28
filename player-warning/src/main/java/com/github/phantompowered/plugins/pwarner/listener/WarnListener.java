@@ -2,7 +2,7 @@ package com.github.phantompowered.plugins.pwarner.listener;
 
 import com.github.phantompowered.plugins.pwarner.storage.PlayerWarningData;
 import com.github.phantompowered.plugins.pwarner.storage.PlayerWarningDatabase;
-import com.github.phantompowered.proxy.api.block.Material;
+import com.github.phantompowered.proxy.api.block.material.Material;
 import com.github.phantompowered.proxy.api.chat.ChatColor;
 import com.github.phantompowered.proxy.api.player.Player;
 import com.github.phantompowered.proxy.api.entity.types.living.human.EntityPlayer;
