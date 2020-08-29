@@ -43,7 +43,7 @@ public class WarnListener {
         }
 
         String name = playerInfo.getDisplayName() != null ? playerInfo.getDisplayName() : playerInfo.getUsername();
-        Material material = Material.getMaterial(event.getItem().getItemId());
+        Material material = event.getItem().getMaterial();
         int amount = event.getItem().getAmount();
         ItemMeta itemMeta = event.getItem().getItemMeta();
         String itemName = material + (itemMeta != null && itemMeta.getDisplayName() != null ? " " + itemMeta.getDisplayName().key() : "");

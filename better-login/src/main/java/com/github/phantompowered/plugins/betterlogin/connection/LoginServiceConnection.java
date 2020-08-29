@@ -5,10 +5,7 @@ import com.github.phantompowered.proxy.api.block.BlockAccess;
 import com.github.phantompowered.proxy.api.block.Facing;
 import com.github.phantompowered.proxy.api.block.material.Material;
 import com.github.phantompowered.proxy.api.chat.ChatMessageType;
-import com.github.phantompowered.proxy.api.connection.ProtocolState;
-import com.github.phantompowered.proxy.api.connection.ServiceConnection;
-import com.github.phantompowered.proxy.api.connection.ServiceInventory;
-import com.github.phantompowered.proxy.api.connection.ServiceWorldDataProvider;
+import com.github.phantompowered.proxy.api.connection.*;
 import com.github.phantompowered.proxy.api.entity.types.Entity;
 import com.github.phantompowered.proxy.api.location.Location;
 import com.github.phantompowered.proxy.api.location.Vector;
@@ -23,7 +20,6 @@ import com.github.phantompowered.proxy.api.scoreboard.Scoreboard;
 import com.github.phantompowered.proxy.api.service.ServiceRegistry;
 import com.github.phantompowered.proxy.api.session.MCServiceCredentials;
 import com.github.phantompowered.proxy.api.task.Task;
-import com.github.phantompowered.proxy.api.task.TaskFutureListener;
 import com.github.phantompowered.proxy.api.task.util.TaskUtil;
 import com.github.phantompowered.proxy.connection.player.DefaultPlayer;
 import com.github.phantompowered.proxy.protocol.play.server.PacketPlayServerLogin;
@@ -78,6 +74,11 @@ public class LoginServiceConnection implements ServiceConnection, Entity.Callabl
     @Override
     public long getLastDisconnectionTimestamp() {
         return -1;
+    }
+
+    @Override
+    public long getLastConnectionTryTimestamp() {
+        return 0;
     }
 
     @Override
@@ -193,42 +194,8 @@ public class LoginServiceConnection implements ServiceConnection, Entity.Callabl
     }
 
     @Override
-    public @NotNull Task<Boolean> connect() {
-        return TaskUtil.completedTask(false);
-    }
-
-    @Override
-    public @NotNull Task<Boolean> connect(@NotNull TaskFutureListener<Boolean> listener) {
-        return TaskUtil.completedTask(false);
-    }
-
-    @Override
-    public @NotNull Task<Boolean> connect(@NotNull Collection<TaskFutureListener<Boolean>> listener) {
-        return TaskUtil.completedTask(false);
-    }
-
-    @Override
-    public @NotNull Task<Boolean> reconnect() {
-        return TaskUtil.completedTask(false);
-    }
-
-    @Override
-    public @NotNull Task<Boolean> reconnect(@NotNull TaskFutureListener<Boolean> listener) {
-        return TaskUtil.completedTask(false);
-    }
-
-    @Override
-    public @NotNull Task<Boolean> reconnect(@NotNull Collection<TaskFutureListener<Boolean>> listener) {
-        return TaskUtil.completedTask(false);
-    }
-
-    @Override
-    public void setReScheduleOnFailure(boolean reScheduleOnFailure) {
-    }
-
-    @Override
-    public boolean isReScheduleOnFailure() {
-        return false;
+    public @NotNull Task<ServiceConnectResult> connect() throws IllegalStateException {
+        return null;
     }
 
     @Override
@@ -315,10 +282,6 @@ public class LoginServiceConnection implements ServiceConnection, Entity.Callabl
 
     @Override
     public void removeOutgoingPacketListener(UUID key) {
-    }
-
-    @Override
-    public void handleDisconnected(@NotNull ServiceConnection connection, @NotNull Component reason) {
     }
 
     @Override
