@@ -2,16 +2,16 @@ package com.github.phantompowered.plugins.pwarner.listener;
 
 import com.github.phantompowered.plugins.pwarner.storage.PlayerWarningData;
 import com.github.phantompowered.plugins.pwarner.storage.PlayerWarningDatabase;
+import com.github.phantompowered.plugins.pwarner.storage.WarnedEquipmentSlot;
 import com.github.phantompowered.proxy.api.block.material.Material;
 import com.github.phantompowered.proxy.api.chat.ChatColor;
-import com.github.phantompowered.proxy.api.player.Player;
-import com.github.phantompowered.proxy.api.entity.types.living.human.EntityPlayer;
 import com.github.phantompowered.proxy.api.entity.PlayerInfo;
+import com.github.phantompowered.proxy.api.entity.types.living.human.EntityPlayer;
 import com.github.phantompowered.proxy.api.event.annotation.Listener;
 import com.github.phantompowered.proxy.api.events.connection.service.EquipmentSlotChangeEvent;
 import com.github.phantompowered.proxy.api.item.ItemMeta;
+import com.github.phantompowered.proxy.api.player.Player;
 import com.github.phantompowered.proxy.api.scoreboard.Team;
-import com.github.phantompowered.plugins.pwarner.storage.WarnedEquipmentSlot;
 
 public class WarnListener {
 
@@ -56,7 +56,14 @@ public class WarnListener {
             ChatColor itemColor = slot.getColor() == null ? ChatColor.YELLOW : slot.getColor();
             String fullName = playerColor + name;
 
-            player.sendMessage(String.format("§7%s §7has %dx %s%s", fullName, amount,itemColor, itemName));
+            int maxDurability = material.getMaxDurability();
+            int durability = maxDurability <= 0 ? -1 : maxDurability - event.getItem().getMeta();
+
+            String out = String.format("§7%s §7has %dx %s%s", fullName, amount, itemColor, itemName);
+            if (durability >= 0) {
+                out += String.format(" §7(§a%d§7/§a%d§7)", durability, maxDurability);
+            }
+            player.sendMessage(out);
         }
     }
 
