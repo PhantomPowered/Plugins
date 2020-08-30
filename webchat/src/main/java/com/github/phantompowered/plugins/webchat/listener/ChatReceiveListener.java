@@ -8,9 +8,14 @@ import com.github.phantompowered.proxy.api.event.annotation.Listener;
 import com.github.phantompowered.proxy.api.events.connection.ChatEvent;
 import io.javalin.websocket.WsContext;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 
 public class ChatReceiveListener {
+
+    private static final DateFormat FORMAT = new SimpleDateFormat("dd.MM.yyyy hh:mm:ss");
 
     @Listener
     public void handleChat(ChatEvent event) {
@@ -24,10 +29,11 @@ public class ChatReceiveListener {
         }
 
         String message = HtmlComponentSerializer.html().serialize(event.getMessage());
+        String finalMessage = FORMAT.format(new Date()) + " " + message;
         // TODO doesn't work with translation/keybind components
 
         for (WsContext context : sessions.values()) {
-            context.send(message);
+            context.send(finalMessage);
         }
     }
 

@@ -56,7 +56,7 @@ function setInfo(success, message) {
     let messageElement = document.getElementById("info-message");
 
     successElement.innerText = success ? "Success" : "Failed";
-    successElement.style.color = success ? "green" : "red";
+    successElement.style.color = success ? "lightgreen" : "red";
 
     messageElement.innerText = message;
 

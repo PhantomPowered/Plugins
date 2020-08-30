@@ -69,6 +69,8 @@ public class WebChat {
             exception.printStackTrace();
         }
 
+        // TODO the connection shouldn't time out after some time doing nothing
+
         javalin.ws("/ws", wsHandler -> {
             // TODO timeout when no init message is received 10 seconds after connection
 
