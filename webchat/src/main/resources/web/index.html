@@ -1,0 +1,56 @@
+<html lang="en">
+
+<head>
+
+    <title>PhantomWebChat</title>
+    <link rel="icon" href="https://avatars0.githubusercontent.com/u/70178045?s=200&v=4">
+
+    <script src="main.js"></script>
+
+</head>
+
+<body style="background:#2d2c2c; color: #bfbfbf">
+
+<div>
+
+    <input id="userinput" placeholder="Username">
+    <button onclick="connect(document.getElementById('userinput').value)">Connect</button>
+    <br>
+
+    <input id="messageinput" placeholder="Chat Message">
+    <button onclick="sendMessage(document.getElementById('messageinput').value)">Send Message</button>
+    <br>
+
+    <a id="info-success"></a> <br>
+    <a id="info-message"></a> <br>
+
+</div>
+
+<div>
+    <h3>Chat messages</h3>
+
+    <button onclick="clearChat()">Clear chat</button>
+    <br> <br>
+
+    <div id="messages"></div>
+
+</div>
+
+<script>
+
+    document.getElementById('messageinput').onkeypress = ev => {
+        if (ev.key === "Enter") {
+            this.sendMessage(document.getElementById('messageinput').value);
+        }
+    };
+    document.getElementById('userinput').onkeypress = ev => {
+        if (ev.key === "Enter") {
+            this.connect(document.getElementById('userinput').value);
+        }
+    };
+
+</script>
+
+</body>
+
+</html>
