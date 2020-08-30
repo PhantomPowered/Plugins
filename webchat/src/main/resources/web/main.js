@@ -8,6 +8,7 @@ function connect(username) {
     webSocket = new WebSocket("ws://${host}/ws");
     webSocket.onopen = ev => {
         webSocket.send(username);
+        this.clearChat();
         console.log("Connection opened")
     };
 
@@ -27,7 +28,6 @@ function connect(username) {
     webSocket.onclose = ev => {
         console.log("Connection closed");
         webSocket = null;
-        this.clearChat();
     }
 
 }
@@ -43,7 +43,7 @@ function sendMessage(message) {
 
 function displayMessage(message) {
     let element = document.createElement("a");
-    element.innerText = message;
+    element.innerHTML = message;
 
     let base = document.getElementById("messages");
     base.insertBefore(element, base.firstChild);

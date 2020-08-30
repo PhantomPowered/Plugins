@@ -1,12 +1,12 @@
 package com.github.phantompowered.plugins.webchat.listener;
 
+import com.github.phantompowered.plugins.webchat.HtmlComponentSerializer;
 import com.github.phantompowered.plugins.webchat.WebChat;
 import com.github.phantompowered.proxy.api.chat.ChatMessageType;
 import com.github.phantompowered.proxy.api.connection.ProtocolDirection;
 import com.github.phantompowered.proxy.api.event.annotation.Listener;
 import com.github.phantompowered.proxy.api.events.connection.ChatEvent;
 import io.javalin.websocket.WsContext;
-import net.kyori.adventure.text.serializer.plain.PlainComponentSerializer;
 
 import java.util.Map;
 
@@ -23,8 +23,9 @@ public class ChatReceiveListener {
             return;
         }
 
-        String message = PlainComponentSerializer.plain().serialize(event.getMessage()); // TODO serialize as html to support colors/hover events
-        // TODO doesn't work with translation components
+        String message = HtmlComponentSerializer.html().serialize(event.getMessage());
+        System.out.println(message);
+        // TODO doesn't work with translation/keybind components
 
         for (WsContext context : sessions.values()) {
             context.send(message);
