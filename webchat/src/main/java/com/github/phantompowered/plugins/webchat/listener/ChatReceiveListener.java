@@ -1,6 +1,7 @@
 package com.github.phantompowered.plugins.webchat.listener;
 
 import com.github.phantompowered.plugins.webchat.WebChat;
+import com.github.phantompowered.proxy.api.chat.ChatMessageType;
 import com.github.phantompowered.proxy.api.connection.ProtocolDirection;
 import com.github.phantompowered.proxy.api.event.annotation.Listener;
 import com.github.phantompowered.proxy.api.events.connection.ChatEvent;
@@ -13,7 +14,7 @@ public class ChatReceiveListener {
 
     @Listener
     public void handleChat(ChatEvent event) {
-        if (event.getDirection() != ProtocolDirection.TO_CLIENT) {
+        if (event.getDirection() != ProtocolDirection.TO_CLIENT || (event.getType() != ChatMessageType.CHAT && event.getType() != ChatMessageType.SYSTEM)) {
             return;
         }
 

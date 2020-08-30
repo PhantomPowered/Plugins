@@ -48,6 +48,7 @@ function displayMessage(message) {
     let base = document.getElementById("messages");
     base.insertBefore(element, base.firstChild);
     base.insertBefore(document.createElement("br"), element);
+    // TODO don't add the message at the first message, but at the last and put the buttons on the bottom of the page and then automatically scroll to the bottom
 }
 
 function setInfo(success, message) {
