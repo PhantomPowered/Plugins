@@ -24,7 +24,6 @@ public class ChatReceiveListener {
         }
 
         String message = HtmlComponentSerializer.html().serialize(event.getMessage());
-        System.out.println(message);
         // TODO doesn't work with translation/keybind components
 
         for (WsContext context : sessions.values()) {
