@@ -58,7 +58,6 @@ public class RulerListener {
                 break;
 
             default:
-            case MISS:
                 return;
         }
 

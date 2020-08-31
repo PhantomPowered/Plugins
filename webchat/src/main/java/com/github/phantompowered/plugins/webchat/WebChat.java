@@ -57,10 +57,10 @@ public class WebChat {
                     .yaml().write(path);
         }
         Document config = Documents.yamlStorage().read(path);
-        this.initWeb(registry, config.getString("host"), config.getString("connectAddress"), config.getInt("port"));
+        this.initWeb(registry, config.getString("host"), config.getString("connectAddress"), config.getInt("port"), config.getBoolean("allowSending"));
     }
 
-    private void initWeb(ServiceRegistry registry, String host, String connectAddress, int port) {
+    private void initWeb(ServiceRegistry registry, String host, String connectAddress, int port, boolean allowSending) {
         Javalin javalin = Javalin.create(e -> e.showJavalinBanner = false).start(host, port);
         javalin.config.addStaticFiles("/web");
         try {
@@ -74,7 +74,7 @@ public class WebChat {
         javalin.ws("/ws", wsHandler -> {
             // TODO timeout when no init message is received 10 seconds after connection
 
-            wsHandler.onMessage(new WebChatWsHandler(registry));
+            wsHandler.onMessage(new WebChatWsHandler(registry, allowSending));
 
             wsHandler.onClose(ctx -> {
                 ServiceConnection connection = ctx.attribute(SESSION_ATTRIBUTE);

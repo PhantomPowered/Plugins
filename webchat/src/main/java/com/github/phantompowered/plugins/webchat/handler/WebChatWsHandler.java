@@ -15,9 +15,11 @@ import java.util.Map;
 public class WebChatWsHandler implements WsMessageHandler {
 
     private final ServiceRegistry registry;
+    private final boolean allowSending;
 
-    public WebChatWsHandler(ServiceRegistry registry) {
+    public WebChatWsHandler(ServiceRegistry registry, boolean allowSending) {
         this.registry = registry;
+        this.allowSending = allowSending;
     }
 
     @Override
@@ -58,6 +60,11 @@ public class WebChatWsHandler implements WsMessageHandler {
         }
 
         String message = ctx.message();
+
+        if (!this.allowSending) {
+            ctx.send("{\"success\":false,\"message\":\"Sending messages through the WebChat has been disabled in the config\"}");
+            return;
+        }
 
         if (message.length() == 0) {
             ctx.send("{\"success\":false,\"message\":\"No message has been provided\"}");
