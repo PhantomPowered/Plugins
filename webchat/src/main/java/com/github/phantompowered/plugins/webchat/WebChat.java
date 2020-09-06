@@ -54,6 +54,7 @@ public class WebChat {
                     .append("host", "127.0.0.1")
                     .append("connectAddress", "127.0.0.1")
                     .append("port", 80)
+                    .append("allowSending", true)
                     .yaml().write(path);
         }
         Document config = Documents.yamlStorage().read(path);
