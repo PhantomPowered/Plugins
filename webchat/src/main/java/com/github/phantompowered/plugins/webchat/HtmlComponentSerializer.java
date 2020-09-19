@@ -1,6 +1,7 @@
 package com.github.phantompowered.plugins.webchat;
 
 import net.kyori.adventure.text.*;
+import net.kyori.adventure.text.event.ClickEvent;
 import net.kyori.adventure.text.format.Style;
 import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.format.TextDecoration;
@@ -75,6 +76,30 @@ public class HtmlComponentSerializer implements ComponentSerializer<Component, T
                 builder.append("text-decoration: underline");
             }
             builder.append('"');
+        }
+
+        ClickEvent clickEvent = style.clickEvent();
+        if (clickEvent != null && clickEvent.action() != ClickEvent.Action.OPEN_FILE && clickEvent.action() != ClickEvent.Action.CHANGE_PAGE) {
+            builder.append(" onclick=\"");
+            switch (clickEvent.action()) {
+                case OPEN_URL:
+                    builder.append("openUrl");
+                    break;
+                case RUN_COMMAND:
+                    builder.append("sendCommand");
+                    break;
+                case SUGGEST_COMMAND:
+                    builder.append("fillCommandInput");
+                    break;
+                case COPY_TO_CLIPBOARD:
+                    builder.append("fillClipboard");
+                    break;
+                case OPEN_FILE:
+                case CHANGE_PAGE:
+                default:
+                    break;
+            }
+            builder.append("('").append(StringEscapeUtils.escapeHtml4(clickEvent.value())).append("')\"");
         }
 
         builder.append('>');

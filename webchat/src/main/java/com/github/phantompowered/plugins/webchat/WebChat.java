@@ -19,7 +19,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 @Plugin(
         id = "com.github.phantompowered.plugins.webchat",
@@ -30,7 +32,7 @@ import java.util.*;
 )
 public class WebChat {
 
-    public static final String CONNECTION_SESSIONS_PROPERTY = "WebChat-Session-" + UUID.randomUUID();
+    public static final String CONNECTION_SESSIONS_PROPERTY = "WebChat-Session";
     public static final String CHAT_HISTORY_PROPERTY = "WebChat-ChatHistory";
     public static final String SESSION_ATTRIBUTE = "WebChat-TargetConnection";
 
