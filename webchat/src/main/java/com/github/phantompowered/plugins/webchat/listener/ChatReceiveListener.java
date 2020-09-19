@@ -1,21 +1,24 @@
 package com.github.phantompowered.plugins.webchat.listener;
 
-import com.github.phantompowered.plugins.webchat.HtmlComponentSerializer;
+import com.github.phantompowered.plugins.webchat.HistoricalMessage;
 import com.github.phantompowered.plugins.webchat.WebChat;
 import com.github.phantompowered.proxy.api.chat.ChatMessageType;
 import com.github.phantompowered.proxy.api.connection.ProtocolDirection;
+import com.github.phantompowered.proxy.api.connection.ServiceConnection;
 import com.github.phantompowered.proxy.api.event.annotation.Listener;
 import com.github.phantompowered.proxy.api.events.connection.ChatEvent;
 import io.javalin.websocket.WsContext;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 public class ChatReceiveListener {
 
-    private static final DateFormat FORMAT = new SimpleDateFormat("dd.MM.yyyy hh:mm:ss");
+    private final WebChat webChat;
+
+    public ChatReceiveListener(WebChat webChat) {
+        this.webChat = webChat;
+    }
 
     @Listener
     public void handleChat(ChatEvent event) {
@@ -23,18 +26,21 @@ public class ChatReceiveListener {
             return;
         }
 
+        HistoricalMessage message = HistoricalMessage.now(event.getMessage());
+        List<HistoricalMessage> messages = this.webChat.getHistory((ServiceConnection) event.getConnection());
+
+        messages.add(message);
+
+        if (messages.size() > this.webChat.getMaxHistorySize()) {
+            messages.remove(0);
+        }
+
         Map<String, WsContext> sessions = event.getConnection().getProperty(WebChat.CONNECTION_SESSIONS_PROPERTY);
         if (sessions == null) {
             return;
         }
 
-        String message = HtmlComponentSerializer.html().serialize(event.getMessage());
-        String finalMessage = FORMAT.format(new Date()) + " " + message;
-        // TODO doesn't work with translation/keybind components
-
-        for (WsContext context : sessions.values()) {
-            context.send(finalMessage);
-        }
+        this.webChat.sendMessage(sessions.values(), message);
     }
 
 }

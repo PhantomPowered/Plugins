@@ -9,15 +9,18 @@ import io.javalin.websocket.WsMessageContext;
 import io.javalin.websocket.WsMessageHandler;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
 public class WebChatWsHandler implements WsMessageHandler {
 
+    private final WebChat webChat;
     private final ServiceRegistry registry;
     private final boolean allowSending;
 
-    public WebChatWsHandler(ServiceRegistry registry, boolean allowSending) {
+    public WebChatWsHandler(WebChat webChat, ServiceRegistry registry, boolean allowSending) {
+        this.webChat = webChat;
         this.registry = registry;
         this.allowSending = allowSending;
     }
@@ -55,6 +58,8 @@ public class WebChatWsHandler implements WsMessageHandler {
             sessions.put(ctx.getSessionId(), ctx);
 
             ctx.send("{\"success\":true,\"message\":\"Successfully logged in\"}");
+
+            this.webChat.sendHistory(Collections.singleton(ctx), connection);
 
             return;
         }

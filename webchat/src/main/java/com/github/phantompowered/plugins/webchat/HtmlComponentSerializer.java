@@ -19,6 +19,7 @@ public class HtmlComponentSerializer implements ComponentSerializer<Component, T
         return INSTANCE;
     }
 
+    // TODO implement
     private final @Nullable Function<KeybindComponent, String> keybind;
     private final @Nullable Function<TranslatableComponent, String> translatable;
 
@@ -33,8 +34,8 @@ public class HtmlComponentSerializer implements ComponentSerializer<Component, T
 
     @NotNull
     @Override
-    // not implemented
     public TextComponent deserialize(@NonNull String input) {
+        // not implemented
         return TextComponent.of(input);
     }
 
@@ -43,10 +44,21 @@ public class HtmlComponentSerializer implements ComponentSerializer<Component, T
     public String serialize(@NonNull Component component) {
         StringBuilder builder = new StringBuilder();
         this.serialize(component, builder);
-        return builder.toString().replace("\n", "<br>");
+        return builder.toString();
     }
 
     private void serialize(Component component, StringBuilder builder) {
+        String rawText = this.getRawText(component);
+        if (!rawText.isEmpty()) {
+            this.serializeStyle(component, rawText.replace("\n", "<br>"), builder);
+        }
+
+        for (Component child : component.children()) {
+            this.serialize(child, builder);
+        }
+    }
+
+    private void serializeStyle(Component component, String rawText, StringBuilder builder) {
         Style style = component.style();
 
         builder.append("<a");
@@ -76,23 +88,7 @@ public class HtmlComponentSerializer implements ComponentSerializer<Component, T
             builder.append("<del>");
         }
 
-        if (component instanceof KeybindComponent) {
-            if (this.keybind != null) {
-                builder.append(this.keybind.apply((KeybindComponent) component));
-            }
-        } else if (component instanceof ScoreComponent) {
-            builder.append(((ScoreComponent) component).value());
-        } else if (component instanceof SelectorComponent) {
-            builder.append(((SelectorComponent) component).pattern());
-        } else if (component instanceof TextComponent) {
-            builder.append(((TextComponent) component).content());
-        } else if (component instanceof TranslatableComponent) {
-            if (this.translatable != null) {
-                builder.append(this.translatable.apply((TranslatableComponent) component));
-            }
-        } else {
-            throw new UnsupportedOperationException("Don't know how to turn " + component.getClass().getSimpleName() + " into a string");
-        }
+        builder.append(rawText);
 
         if (style.hasDecoration(TextDecoration.BOLD)) {
             builder.append("</b>");
@@ -105,9 +101,27 @@ public class HtmlComponentSerializer implements ComponentSerializer<Component, T
         }
 
         builder.append("</a>");
+    }
 
-        for (Component child : component.children()) {
-            this.serialize(child, builder);
+    private String getRawText(Component component) {
+        if (component instanceof KeybindComponent) {
+            if (this.keybind != null) {
+                return this.keybind.apply((KeybindComponent) component);
+            }
+            return ((KeybindComponent) component).keybind();
+        } else if (component instanceof ScoreComponent) {
+            return ((ScoreComponent) component).value();
+        } else if (component instanceof SelectorComponent) {
+            return ((SelectorComponent) component).pattern();
+        } else if (component instanceof TextComponent) {
+            return ((TextComponent) component).content();
+        } else if (component instanceof TranslatableComponent) {
+            if (this.translatable != null) {
+                return this.translatable.apply((TranslatableComponent) component);
+            }
+            return ((TranslatableComponent) component).key();
+        } else {
+            throw new UnsupportedOperationException("Don't know how to turn " + component.getClass().getSimpleName() + " into a string");
         }
     }
 
