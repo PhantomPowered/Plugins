@@ -46,9 +46,10 @@ function displayMessage(message) {
     element.innerHTML = message;
 
     let base = document.getElementById("messages");
-    base.insertBefore(element, base.firstChild);
-    base.insertBefore(document.createElement("br"), element);
-    // TODO don't add the message at the first message, but at the last and put the buttons on the bottom of the page and then automatically scroll to the bottom
+    base.append(document.createElement("br"));
+    base.append(element);
+
+    element.scrollIntoView();
 }
 
 function setInfo(success, message) {
@@ -61,8 +62,8 @@ function setInfo(success, message) {
     messageElement.innerText = message;
 
     setTimeout(() => {
-        successElement.value = "";
-        messageElement.value = "";
+        successElement.innerText = "";
+        messageElement.innerText = "";
     }, 5000);
 
 }

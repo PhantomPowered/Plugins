@@ -12,6 +12,19 @@
 <body style="background:#2d2c2c; color: white">
 
 <div>
+    <h3>Chat</h3>
+
+    <div id="messages"></div>
+
+</div>
+
+<div>
+
+    <br>
+
+    <button onclick="clearChat()">Clear chat</button>
+
+    <br> <br>
 
     <input id="userinput" placeholder="Username">
     <button onclick="connect(document.getElementById('userinput').value)">Connect</button>
@@ -23,16 +36,6 @@
 
     <a id="info-success"></a> <br>
     <a id="info-message"></a> <br>
-
-</div>
-
-<div>
-    <h3>Chat messages</h3>
-
-    <button onclick="clearChat()">Clear chat</button>
-    <br> <br>
-
-    <div id="messages"></div>
 
 </div>
 
