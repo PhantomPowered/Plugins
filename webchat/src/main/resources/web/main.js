@@ -49,7 +49,9 @@ function displayMessage(message) {
     base.append(document.createElement("br"));
     base.append(element);
 
-    element.scrollIntoView();
+    if (document.getElementById("autoscroll").checked) {
+        element.scrollIntoView();
+    }
 }
 
 function setInfo(success, message) {
