@@ -56,6 +56,7 @@ public class WebChat {
                     .append("host", "127.0.0.1")
                     .append("connectAddress", "127.0.0.1")
                     .append("port", 80)
+                    .append("allowSending", true)
                     .append("maxHistorySize", maxHistorySize)
                     .yaml().write(path);
         }
