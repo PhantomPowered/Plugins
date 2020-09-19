@@ -5,6 +5,7 @@ import net.kyori.adventure.text.format.Style;
 import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.format.TextDecoration;
 import net.kyori.adventure.text.serializer.ComponentSerializer;
+import org.apache.commons.text.StringEscapeUtils;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 import org.jetbrains.annotations.NotNull;
@@ -50,7 +51,7 @@ public class HtmlComponentSerializer implements ComponentSerializer<Component, T
     private void serialize(Component component, StringBuilder builder) {
         String rawText = this.getRawText(component);
         if (!rawText.isEmpty()) {
-            this.serializeStyle(component, rawText.replace("\n", "<br>"), builder);
+            this.serializeStyle(component, this.prepareText(rawText), builder);
         }
 
         for (Component child : component.children()) {
@@ -101,6 +102,10 @@ public class HtmlComponentSerializer implements ComponentSerializer<Component, T
         }
 
         builder.append("</a>");
+    }
+
+    private String prepareText(String rawText) {
+        return StringEscapeUtils.escapeHtml4(rawText).replace("\n", "<br>");
     }
 
     private String getRawText(Component component) {
