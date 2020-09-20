@@ -74,7 +74,7 @@ function displayMessage(message) {
     base.append(element);
 
     if (document.getElementById("autoscroll").checked) {
-        element.scrollIntoView();
+        document.getElementById("selectedMode").scrollIntoView();
     }
 }
 
