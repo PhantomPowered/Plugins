@@ -19,8 +19,14 @@
   display: block;
 }
 
-.modes-content a:hover {background-color: #ddd;}
+.modes-content a:hover {
+    background-color: #ddd;
+}
 
-.modes:hover .modes-content {display: block;}
+.modes:hover .modes-content {
+    display: block;
+}
 
-.modes:hover .modesbutton {background-color: #3e8e41;}
+.modes:hover .modesbutton {
+    background-color: lightgray;
+}
