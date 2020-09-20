@@ -35,7 +35,7 @@ public class ChatReceiveListener {
 
     @Listener
     public void handleProxyMessage(PlayerSendProxyMessageEvent event) {
-        if (event.getPlayer().getConnectedClient() == null) {
+        if (event.getPlayer().getConnectedClient() == null || (event.getType() != ChatMessageType.CHAT && event.getType() != ChatMessageType.SYSTEM)) {
             return;
         }
 
