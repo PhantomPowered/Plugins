@@ -76,7 +76,6 @@ public class WebChatWsHandler implements WsMessageHandler {
 
 
         JsonObject input = JsonParser.parseString(ctx.message()).getAsJsonObject();
-        System.out.println(input);
         if (!input.has("action")) {
             return;
         }
