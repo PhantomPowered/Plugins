@@ -79,6 +79,8 @@ public class HtmlComponentSerializer implements ComponentSerializer<Component, T
         }
 
         ClickEvent clickEvent = style.clickEvent();
+        // TODO clickable texts are not displayed with that special mouse thingy
+
         if (clickEvent != null && clickEvent.action() != ClickEvent.Action.OPEN_FILE && clickEvent.action() != ClickEvent.Action.CHANGE_PAGE) {
             builder.append(" onclick=\"");
             switch (clickEvent.action()) {

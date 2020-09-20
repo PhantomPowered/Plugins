@@ -14,15 +14,31 @@ function connect(username) {
 
     webSocket.onmessage = ev => {
         let input = ev.data;
-        try {
+        let json = JSON.parse(ev.data);
 
-            let json = JSON.parse(input);
-
+        if (json.hasOwnProperty("success") && json.hasOwnProperty("message")) {
             this.setInfo(json.success, json.message);
-
-        } catch (e) {
-            this.displayMessage(input);
         }
+
+        if (json.hasOwnProperty("modes")) {
+            let modes = document.getElementById("modes-content");
+            this.clear(modes);
+            json.modes.forEach(mode => {
+                let modeElement = document.createElement("a");
+                modeElement.innerText = mode;
+                modeElement.onclick = () => this.changeMode(mode);
+                modes.append(modeElement);
+            });
+        }
+
+        if (json.hasOwnProperty("selectedMode")) {
+            document.getElementById("selectedMode").innerText = json.selectedMode;
+        }
+
+        if (json.hasOwnProperty("appendChat")) {
+            this.displayMessage(json.appendChat);
+        }
+
     }
 
     webSocket.onclose = ev => {
@@ -37,7 +53,15 @@ function sendMessage(message) {
         return;
     }
 
-    webSocket.send(message);
+    webSocket.send(JSON.stringify({"action": "chat", "value": message}));
+}
+
+function changeMode(mode) {
+    if (webSocket == null) {
+        return;
+    }
+
+    webSocket.send(JSON.stringify({"action": "changeMode", "value": mode}))
 }
 
 
@@ -75,7 +99,6 @@ function clearChat() {
 }
 
 function clear(node) {
-    console.log("test")
     while (node.firstChild) {
         console.log(node.firstChild);
         node.removeChild(node.firstChild);

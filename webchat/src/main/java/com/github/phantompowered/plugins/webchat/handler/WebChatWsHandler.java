@@ -1,9 +1,13 @@
 package com.github.phantompowered.plugins.webchat.handler;
 
+import com.github.derrop.documents.Documents;
+import com.github.phantompowered.plugins.webchat.ChatMode;
 import com.github.phantompowered.plugins.webchat.WebChat;
 import com.github.phantompowered.proxy.api.connection.ServiceConnection;
 import com.github.phantompowered.proxy.api.connection.ServiceConnector;
 import com.github.phantompowered.proxy.api.service.ServiceRegistry;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import io.javalin.websocket.WsContext;
 import io.javalin.websocket.WsMessageContext;
 import io.javalin.websocket.WsMessageHandler;
@@ -42,7 +46,7 @@ public class WebChatWsHandler implements WsMessageHandler {
                     .orElse(null);
 
             if (connection == null) {
-                ctx.send("{\"success\":false,\"message\":\"Connection with the name '" + name + "' not found\"}");
+                ctx.send(Documents.newDocument().append("success", false).append("message", "Connection with the name '" + name + "' not found").toString());
                 ctx.session.close();
                 return;
             }
@@ -56,16 +60,47 @@ public class WebChatWsHandler implements WsMessageHandler {
             }
 
             sessions.put(ctx.getSessionId(), ctx);
+            ctx.attribute("mode", ChatMode.ALL);
 
-            ctx.send("{\"success\":true,\"message\":\"Successfully logged in\"}");
+            ctx.send(Documents.newDocument()
+                    .append("success", true)
+                    .append("message", "Successfully logged in as '" + name + "'")
+                    .append("selectedMode", ChatMode.ALL)
+                    .append("modes", ChatMode.values())
+                    .toString());
 
             this.webChat.sendHistory(Collections.singleton(ctx), connection);
 
             return;
         }
 
-        String message = ctx.message();
 
+        JsonObject input = JsonParser.parseString(ctx.message()).getAsJsonObject();
+        System.out.println(input);
+        if (!input.has("action")) {
+            return;
+        }
+        String action = input.get("action").getAsString();
+        String value = input.get("value").getAsString();
+
+        switch (action) {
+            case "chat":
+                this.chat(ctx, connection, value);
+                break;
+
+            case "changeMode":
+                ChatMode mode = ChatMode.valueOf(value);
+                ctx.attribute("mode", mode);
+                ctx.send(Documents.newDocument().append("selectedMode", mode).toString());
+                break;
+
+            default:
+                ctx.send(Documents.newDocument().append("success", false).append("message", "Unknown action: " + action));
+                break;
+        }
+    }
+
+    private void chat(WsContext ctx, ServiceConnection connection, String message) {
         if (!this.allowSending) {
             ctx.send("{\"success\":false,\"message\":\"Sending messages through the WebChat has been disabled in the config\"}");
             return;
@@ -83,4 +118,5 @@ public class WebChatWsHandler implements WsMessageHandler {
         connection.chat(message);
         ctx.send("{\"success\":true,\"message\":\"Message successfully sent to the server\"}");
     }
+
 }

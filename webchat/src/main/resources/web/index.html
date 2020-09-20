@@ -4,6 +4,7 @@
 
     <title>PhantomWebChat</title>
     <link rel="icon" href="https://avatars0.githubusercontent.com/u/70178045?s=200&v=4">
+    <link rel="stylesheet" href="style.css"/>
 
     <script src="main.js"></script>
     <script src="clickEvents.js"></script>
@@ -34,6 +35,13 @@
 
     <input id="messageinput" placeholder="Chat Message">
     <button onclick="sendMessage(document.getElementById('messageinput').value)">Send Message</button>
+    <br>
+
+    <br>
+    <div class="modes">
+        <button id="selectedMode" class="modesbutton">Modes</button>
+        <div id="modes-content" class="modes-content"></div>
+    </div>
     <br>
 
     <a id="info-success"></a> <br>

@@ -106,9 +106,15 @@ public class WebChat {
 
     public void sendMessage(Iterable<WsContext> contexts, HistoricalMessage message) {
         String html = message.asHtml();
+        String json = Documents.newDocument().append("appendChat", html).toString();
 
         for (WsContext context : contexts) {
-            context.send(html);
+            ChatMode mode = context.attribute("mode");
+            if (mode != ChatMode.ALL && mode != message.getMode()) {
+                continue;
+            }
+
+            context.send(json);
         }
     }
 
