@@ -2,7 +2,6 @@ package com.github.phantompowered.plugins.webchat;
 
 import com.github.derrop.documents.Document;
 import com.github.derrop.documents.Documents;
-import com.github.phantompowered.plugins.webchat.handler.FileHandler;
 import com.github.phantompowered.plugins.webchat.handler.WebChatWsHandler;
 import com.github.phantompowered.plugins.webchat.listener.ChatReceiveListener;
 import com.github.phantompowered.proxy.api.connection.ServiceConnection;
@@ -15,7 +14,6 @@ import com.github.phantompowered.proxy.api.service.ServiceRegistry;
 import io.javalin.Javalin;
 import io.javalin.websocket.WsContext;
 
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -56,26 +54,20 @@ public class WebChat {
         if (!Files.exists(path)) {
             Documents.newDocument()
                     .append("host", "127.0.0.1")
-                    .append("connectAddress", "127.0.0.1")
                     .append("port", 80)
                     .append("allowSending", true)
                     .append("maxHistorySize", this.maxHistorySize)
                     .yaml().write(path);
         }
         Document config = Documents.yamlStorage().read(path);
-        this.initWeb(registry, config.getString("host"), config.getString("connectAddress"), config.getInt("port"), config.getBoolean("allowSending"));
+        this.initWeb(registry, config.getString("host"), config.getInt("port"), config.getBoolean("allowSending"));
 
         this.maxHistorySize = Math.max(0, config.getInt("maxHistorySize", this.maxHistorySize));
     }
 
-    private void initWeb(ServiceRegistry registry, String host, String connectAddress, int port, boolean allowSending) {
+    private void initWeb(ServiceRegistry registry, String host, int port, boolean allowSending) {
         Javalin javalin = Javalin.create(e -> e.showJavalinBanner = false).start(host, port);
         javalin.config.addStaticFiles("/web");
-        try {
-            javalin.get("/main.js", new FileHandler("web/main.js", Map.of("${host}", connectAddress)));
-        } catch (IOException exception) {
-            exception.printStackTrace();
-        }
 
         // TODO the connection shouldn't time out after some time doing nothing
 

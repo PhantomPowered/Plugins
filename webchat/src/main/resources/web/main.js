@@ -5,7 +5,7 @@ function connect(username) {
         return;
     }
 
-    webSocket = new WebSocket("ws://${host}/ws");
+    webSocket = new WebSocket("ws://" + document.location.host + "/ws");
     webSocket.onopen = ev => {
         webSocket.send(username);
         this.clearChat();

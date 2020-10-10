@@ -11,6 +11,7 @@ import com.github.phantompowered.proxy.api.location.Location;
 import com.github.phantompowered.proxy.api.location.Vector;
 import com.github.phantompowered.proxy.api.network.NetworkAddress;
 import com.github.phantompowered.proxy.api.network.Packet;
+import com.github.phantompowered.proxy.api.network.wrapper.ProtoBuf;
 import com.github.phantompowered.proxy.api.player.Player;
 import com.github.phantompowered.proxy.api.player.PlayerAbilities;
 import com.github.phantompowered.proxy.api.player.id.PlayerId;
@@ -206,6 +207,14 @@ public class LoginServiceConnection implements ServiceConnection, Entity.Callabl
     @Override
     public void disconnect(@NotNull Component reason) {
         this.player.disconnect(reason);
+    }
+
+    @Override
+    public void sendCustomPayload(@NotNull String s, @NotNull byte[] bytes) {
+    }
+
+    @Override
+    public void sendCustomPayload(@NotNull String s, @NotNull ProtoBuf protoBuf) {
     }
 
     @Override
