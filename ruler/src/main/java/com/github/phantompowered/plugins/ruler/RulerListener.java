@@ -9,7 +9,7 @@ import com.github.phantompowered.proxy.api.event.annotation.Listener;
 import com.github.phantompowered.proxy.api.events.connection.player.PlayerInteractEvent;
 import com.github.phantompowered.proxy.api.location.Location;
 import com.github.phantompowered.proxy.api.raytrace.BlockingObject;
-import net.kyori.adventure.text.TextComponent;
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 
 public class RulerListener {
 
@@ -61,6 +61,6 @@ public class RulerListener {
                 return;
         }
 
-        event.getPlayer().sendActionBar(1, TextComponent.of(text));
+        event.getPlayer().sendActionBar(1, LegacyComponentSerializer.legacySection().deserialize(text));
     }
 }

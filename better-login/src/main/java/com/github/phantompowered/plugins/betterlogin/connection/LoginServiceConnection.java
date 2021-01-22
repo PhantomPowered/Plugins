@@ -5,7 +5,12 @@ import com.github.phantompowered.proxy.api.block.BlockAccess;
 import com.github.phantompowered.proxy.api.block.Facing;
 import com.github.phantompowered.proxy.api.block.material.Material;
 import com.github.phantompowered.proxy.api.chat.ChatMessageType;
-import com.github.phantompowered.proxy.api.connection.*;
+import com.github.phantompowered.proxy.api.chat.HistoricalMessage;
+import com.github.phantompowered.proxy.api.connection.ProtocolState;
+import com.github.phantompowered.proxy.api.connection.ServiceConnectResult;
+import com.github.phantompowered.proxy.api.connection.ServiceConnection;
+import com.github.phantompowered.proxy.api.connection.ServiceInventory;
+import com.github.phantompowered.proxy.api.connection.ServiceWorldDataProvider;
 import com.github.phantompowered.proxy.api.entity.types.Entity;
 import com.github.phantompowered.proxy.api.location.Location;
 import com.github.phantompowered.proxy.api.location.Vector;
@@ -34,12 +39,17 @@ import com.mojang.authlib.UserAuthentication;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.Channel;
 import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.TextComponent;
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.net.InetSocketAddress;
-import java.util.*;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
+import java.util.Set;
+import java.util.UUID;
 import java.util.function.Consumer;
 
 public class LoginServiceConnection implements ServiceConnection, Entity.Callable {
@@ -153,7 +163,7 @@ public class LoginServiceConnection implements ServiceConnection, Entity.Callabl
 
     @Override
     public void displayMessage(@NotNull ChatMessageType type, @NotNull String message) {
-        this.player.sendMessage(type, TextComponent.of(message));
+        this.player.sendMessage(type, LegacyComponentSerializer.legacySection().deserialize(message));
     }
 
     @Override
@@ -215,6 +225,11 @@ public class LoginServiceConnection implements ServiceConnection, Entity.Callabl
 
     @Override
     public void sendCustomPayload(@NotNull String s, @NotNull ProtoBuf protoBuf) {
+    }
+
+    @Override
+    public List<HistoricalMessage> getReceivedMessages() {
+        return Collections.emptyList();
     }
 
     @Override

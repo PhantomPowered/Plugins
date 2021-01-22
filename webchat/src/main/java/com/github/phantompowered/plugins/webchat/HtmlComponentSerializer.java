@@ -6,6 +6,7 @@ import net.kyori.adventure.text.format.Style;
 import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.format.TextDecoration;
 import net.kyori.adventure.text.serializer.ComponentSerializer;
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import org.apache.commons.text.StringEscapeUtils;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
@@ -38,7 +39,7 @@ public class HtmlComponentSerializer implements ComponentSerializer<Component, T
     @Override
     public TextComponent deserialize(@NonNull String input) {
         // not implemented
-        return TextComponent.of(input);
+        return LegacyComponentSerializer.legacySection().deserialize(input);
     }
 
     @NotNull

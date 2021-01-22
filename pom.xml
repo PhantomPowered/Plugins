@@ -22,6 +22,7 @@
         <module>ruler</module>
         <module>automsg</module>
         <module>webchat</module>
+        <module>fast-pickup</module>
     </modules>
 
     <repositories>

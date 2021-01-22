@@ -31,7 +31,7 @@ import java.util.Map;
 public class WebChat {
 
     public static final String CONNECTION_SESSIONS_PROPERTY = "WebChat-Session";
-    public static final String CHAT_HISTORY_PROPERTY = "WebChat-ChatHistory";
+    public static final String CHAT_HISTORY_PROPERTY = "WebChat-ChatHistory"; // TODO replace with the history in the proxy
     public static final String SESSION_ATTRIBUTE = "WebChat-TargetConnection";
 
     // TODO authentication
