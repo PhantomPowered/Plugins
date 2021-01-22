@@ -15,7 +15,6 @@ import com.github.phantompowered.proxy.api.service.ServiceRegistry;
 import com.github.phantompowered.proxy.api.tick.TickHandlerProvider;
 import com.github.phantompowered.proxy.protocol.ProtocolIds;
 import com.github.phantompowered.proxy.protocol.play.client.position.PacketPlayClientPlayerPosition;
-import com.github.phantompowered.proxy.protocol.play.client.position.PacketPlayClientPosition;
 
 @Plugin(
         id = "com.github.phantompowered.plugins.fastpickup",

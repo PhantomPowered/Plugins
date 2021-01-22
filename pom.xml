@@ -23,6 +23,7 @@
         <module>automsg</module>
         <module>webchat</module>
         <module>fast-pickup</module>
+        <module>priority-join</module>
     </modules>
 
     <repositories>
