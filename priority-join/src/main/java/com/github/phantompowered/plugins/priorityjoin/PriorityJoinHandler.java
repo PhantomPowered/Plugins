@@ -24,7 +24,7 @@ public class PriorityJoinHandler {
             return;
         }
 
-        this.registry.getProviderUnchecked(ServiceConnector.class).getOnlineClients().stream()
+        this.registry.getProviderUnchecked(ServiceConnector.class).getFreeClients().stream()
                 .filter(connection -> preferredId.equals(connection.getUniqueId()))
                 .findFirst()
                 .ifPresent(event::setConnection);
