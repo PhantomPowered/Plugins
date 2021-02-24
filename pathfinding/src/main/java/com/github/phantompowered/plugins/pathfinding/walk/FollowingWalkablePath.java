@@ -1,5 +1,6 @@
 package com.github.phantompowered.plugins.pathfinding.walk;
 
+import com.github.phantompowered.proxy.api.block.material.Material;
 import com.github.phantompowered.proxy.api.connection.ServiceConnection;
 import com.github.phantompowered.proxy.api.location.Location;
 import com.github.phantompowered.plugins.pathfinding.Path;
@@ -33,19 +34,20 @@ public class FollowingWalkablePath extends WalkablePath {
 
     @Override
     public boolean isDone() {
-        return !this.path.hasPointsLeft();
+        return !this.path.hasPointsLeft() && (this.currentWay == null || this.currentWay.isEmpty());
     }
 
     public PathPoint getCurrentPoint() {
-        return currentPoint;
+        return this.currentPoint;
     }
 
     public void setCurrentPoint(PathPoint currentPoint) {
+        this.previousPoint = this.currentPoint;
         this.currentPoint = currentPoint;
     }
 
     public PathPoint getPreviousPoint() {
-        return previousPoint;
+        return this.previousPoint;
     }
 
     public void setPreviousPoint(PathPoint previousPoint) {
@@ -53,7 +55,7 @@ public class FollowingWalkablePath extends WalkablePath {
     }
 
     public Queue<PathPoint> getCurrentWay() {
-        return currentWay;
+        return this.currentWay;
     }
 
     public void setCurrentWay(Queue<PathPoint> currentWay) {
@@ -67,7 +69,6 @@ public class FollowingWalkablePath extends WalkablePath {
         if (point == null) {
             PathPoint previousPoint = this.getCurrentPoint();
             PathPoint currentPoint = this.path.getNextPoint();
-            this.setPreviousPoint(previousPoint);
             this.setCurrentPoint(currentPoint);
             this.setCurrentWay(this.smoothWay(previousPoint, currentPoint));
             return;
@@ -76,19 +77,15 @@ public class FollowingWalkablePath extends WalkablePath {
         Location location = this.getPath().getAbsoluteLocation(point);
         PathPoint nextPoint = this.getCurrentPoint();
         if (nextPoint != null) {
-            location.setDirection(this.getPath().getAbsoluteLocation(nextPoint).subtract(location).toVector());
-        } else {
-            location.setDirection(this.getConnection().getLocation().toVector());
+            location.setDirection(this.getPath().getAbsoluteLocation(nextPoint).subtract(this.getConnection().getLocation()).toVector());
         }
-        /*if (path.getConnection().getLocation().distanceSquared(location) > 25) { TODO
-            runningPaths.remove(entry.getKey());
-            System.err.println("FAILED");
-            continue;
-        }*/
+
         this.getConnection().teleport(location);
     }
 
     private Queue<PathPoint> smoothWay(PathPoint previousPoint, PathPoint currentPoint) {
+        // TODO This doesn't seem to be working well on diagonal paths
+
         if (currentPoint == null) {
             return null;
         }

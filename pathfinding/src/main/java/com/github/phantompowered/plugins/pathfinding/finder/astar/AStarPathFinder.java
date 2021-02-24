@@ -25,6 +25,7 @@
 package com.github.phantompowered.plugins.pathfinding.finder.astar;
 
 import com.github.phantompowered.plugins.pathfinding.finder.PathFindInteraction;
+import com.github.phantompowered.plugins.pathfinding.finder.PathFindUtils;
 import com.github.phantompowered.proxy.api.block.BlockAccess;
 import com.github.phantompowered.proxy.api.location.Location;
 import com.github.phantompowered.plugins.pathfinding.PathPoint;
@@ -123,11 +124,11 @@ public class AStarPathFinder {
 
             if (this.isCompleted(point, endPoint)) {
                 PathPoint previous = point;
-                previous.setY(previous.getY() + 1.3);
 
                 Queue<PathPoint> points = new ConcurrentLinkedQueue<>();
 
                 do {
+                    previous.setY(previous.getY() + PathFindUtils.getYOffset(access.getMaterial(start.clone().add(previous.getX(), previous.getY() + 1, previous.getZ()))));
                     points.add(previous);
                 } while ((previous = previous.getPreviousPoint()) != startPoint);
                 System.out.println("Success: " + points);

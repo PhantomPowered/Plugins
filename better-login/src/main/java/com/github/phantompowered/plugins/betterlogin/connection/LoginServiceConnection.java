@@ -12,6 +12,7 @@ import com.github.phantompowered.proxy.api.connection.ServiceConnection;
 import com.github.phantompowered.proxy.api.connection.ServiceInventory;
 import com.github.phantompowered.proxy.api.connection.ServiceWorldDataProvider;
 import com.github.phantompowered.proxy.api.entity.types.Entity;
+import com.github.phantompowered.proxy.api.location.BlockingObject;
 import com.github.phantompowered.proxy.api.location.Location;
 import com.github.phantompowered.proxy.api.location.Vector;
 import com.github.phantompowered.proxy.api.network.NetworkAddress;
@@ -21,7 +22,6 @@ import com.github.phantompowered.proxy.api.player.Player;
 import com.github.phantompowered.proxy.api.player.PlayerAbilities;
 import com.github.phantompowered.proxy.api.player.id.PlayerId;
 import com.github.phantompowered.proxy.api.player.inventory.InventoryType;
-import com.github.phantompowered.proxy.api.raytrace.BlockingObject;
 import com.github.phantompowered.proxy.api.scoreboard.Scoreboard;
 import com.github.phantompowered.proxy.api.service.ServiceRegistry;
 import com.github.phantompowered.proxy.api.session.MCServiceCredentials;
@@ -143,6 +143,11 @@ public class LoginServiceConnection implements ServiceConnection, Entity.Callabl
     }
 
     @Override
+    public @NotNull Location getHeadLocation() {
+        return this.getLocation();
+    }
+
+    @Override
     public boolean isOnGround() {
         return true;
     }
@@ -225,6 +230,11 @@ public class LoginServiceConnection implements ServiceConnection, Entity.Callabl
 
     @Override
     public void sendCustomPayload(@NotNull String s, @NotNull ProtoBuf protoBuf) {
+    }
+
+    @Override
+    public int getPing() {
+        return 0;
     }
 
     @Override
@@ -394,7 +404,7 @@ public class LoginServiceConnection implements ServiceConnection, Entity.Callabl
 
     @Override
     public @NotNull BlockingObject getTargetObject(int range) {
-        return BlockingObject.MISS;
+        return BlockingObject.miss();
     }
 
     @Override
@@ -467,6 +477,11 @@ public class LoginServiceConnection implements ServiceConnection, Entity.Callabl
 
     @Override
     public void openInventory() {
+
+    }
+
+    @Override
+    public void selectHeldItemSlot(int i) {
 
     }
 }

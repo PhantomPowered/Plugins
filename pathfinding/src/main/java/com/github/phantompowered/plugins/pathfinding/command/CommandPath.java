@@ -1,18 +1,17 @@
 package com.github.phantompowered.plugins.pathfinding.command;
 
+import com.github.phantompowered.plugins.pathfinding.Path;
+import com.github.phantompowered.plugins.pathfinding.finder.PathFindInteraction;
+import com.github.phantompowered.plugins.pathfinding.provider.PathProvider;
+import com.github.phantompowered.plugins.pathfinding.walk.PathWalker;
 import com.github.phantompowered.proxy.api.block.material.Material;
 import com.github.phantompowered.proxy.api.command.basic.NonTabCompleteableCommandCallback;
 import com.github.phantompowered.proxy.api.command.exception.CommandExecutionException;
 import com.github.phantompowered.proxy.api.command.result.CommandResult;
 import com.github.phantompowered.proxy.api.command.sender.CommandSender;
-import com.github.phantompowered.proxy.api.player.Player;
 import com.github.phantompowered.proxy.api.location.Location;
+import com.github.phantompowered.proxy.api.player.Player;
 import com.github.phantompowered.proxy.api.service.ServiceRegistry;
-import com.github.phantompowered.plugins.pathfinding.Path;
-import com.github.phantompowered.plugins.pathfinding.finder.PathFindInteraction;
-import com.github.phantompowered.plugins.pathfinding.provider.PathProvider;
-import com.github.phantompowered.plugins.pathfinding.walk.DefaultPathWalker;
-import com.github.phantompowered.plugins.pathfinding.walk.PathWalker;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.ExecutorService;
@@ -100,15 +99,14 @@ public class CommandPath extends NonTabCompleteableCommandCallback {
                     .findShortestPath(interaction, canFly, player.getConnectedClient().getBlockAccess(), start.down(), pos);
 
             if (path.isSuccess()) {
-                double distance = Math.sqrt(start.distanceSquared(pos));
-                double bps = (DefaultPathWalker.BPT * DefaultPathWalker.TPS);
-                final long time = (long) ((double) path.getAllPoints().length / bps) + 10;
+                double distance = start.distance(pos);
 
                 sender.sendMessage("§aSuccessfully found the path from " + start.toShortString() + " to " + pos.toShortString() + " (" + String.format("%.2f", distance) + " blocks airway)");
-                sender.sendMessage("§aBlocks to walk: " + path.getAllPoints().length + " §7(Calculated with a speed of " + bps + " blocks per second)");
+                sender.sendMessage("§aBlocks to walk: " + path.getAllPoints().length);// + " §7(Calculated with a speed of " + bps + " blocks per second)");
 
                 path.fill(player, player.getConnectedClient().getBlockAccess(), Material.EMERALD_BLOCK, true);
 
+                long time = 15;
                 sender.sendMessage(String.format("§cThe emeralds will be replaced in §e%d §cseconds", time));
                 this.scheduledExecutorService.schedule(() -> {
                     if (player.getConnectedClient() != null) {

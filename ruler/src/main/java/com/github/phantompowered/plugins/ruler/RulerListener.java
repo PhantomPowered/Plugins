@@ -7,8 +7,8 @@ import com.github.phantompowered.proxy.api.entity.types.Entity;
 import com.github.phantompowered.proxy.api.entity.types.living.human.EntityPlayer;
 import com.github.phantompowered.proxy.api.event.annotation.Listener;
 import com.github.phantompowered.proxy.api.events.connection.player.PlayerInteractEvent;
+import com.github.phantompowered.proxy.api.location.BlockingObject;
 import com.github.phantompowered.proxy.api.location.Location;
-import com.github.phantompowered.proxy.api.raytrace.BlockingObject;
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 
 public class RulerListener {
