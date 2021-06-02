@@ -5,13 +5,17 @@ import com.github.phantompowered.plugins.pwarner.storage.PlayerWarningDatabase;
 import com.github.phantompowered.plugins.pwarner.storage.WarnedEquipmentSlot;
 import com.github.phantompowered.proxy.api.block.material.Material;
 import com.github.phantompowered.proxy.api.chat.ChatColor;
+import com.github.phantompowered.proxy.api.chat.ChatMessageType;
 import com.github.phantompowered.proxy.api.entity.PlayerInfo;
 import com.github.phantompowered.proxy.api.entity.types.living.human.EntityPlayer;
+import com.github.phantompowered.proxy.api.event.EventManager;
 import com.github.phantompowered.proxy.api.event.annotation.Listener;
+import com.github.phantompowered.proxy.api.events.connection.player.PlayerSendProxyMessageEvent;
 import com.github.phantompowered.proxy.api.events.connection.service.EquipmentSlotChangeEvent;
 import com.github.phantompowered.proxy.api.item.ItemMeta;
 import com.github.phantompowered.proxy.api.player.Player;
 import com.github.phantompowered.proxy.api.scoreboard.Team;
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 
 public class WarnListener {
 
@@ -63,7 +67,9 @@ public class WarnListener {
             if (durability >= 0) {
                 out += String.format(" §7(§a%d§7/§a%d§7)", durability, maxDurability);
             }
-            player.sendMessage(out);
+
+            player.getServiceRegistry().getProviderUnchecked(EventManager.class)
+                    .callEvent(new PlayerSendProxyMessageEvent(player, ChatMessageType.CHAT, LegacyComponentSerializer.legacySection().deserialize(out)));
         }
     }
 

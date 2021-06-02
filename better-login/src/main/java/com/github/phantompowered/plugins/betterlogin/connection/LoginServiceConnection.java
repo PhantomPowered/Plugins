@@ -431,6 +431,11 @@ public class LoginServiceConnection implements ServiceConnection, Entity.Callabl
     }
 
     @Override
+    public void lookAt(@NotNull Location location) {
+
+    }
+
+    @Override
     public void breakBlock(Location location, Facing facing) {
 
     }

@@ -11,7 +11,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class DefaultPathWalker implements PathWalker, TickHandler {
 
-    public static final double BPT = 0.25; // blocks per tick TODO use flight/walk speed from the player abilities
+    public static final double BPT = 0.1; // blocks per tick TODO use flight/walk speed from the player abilities
 
     private final Map<UUID, WalkablePath> runningPaths = new ConcurrentHashMap<>();
 

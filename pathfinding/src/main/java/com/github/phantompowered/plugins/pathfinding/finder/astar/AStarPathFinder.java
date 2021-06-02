@@ -152,7 +152,7 @@ public class AStarPathFinder {
         double dx = Math.abs(current.getX() - end.getX());
         double dy = Math.abs(current.getY() - end.getY());
         double dz = Math.abs(current.getZ() - end.getZ());
-        return dx <= 1 && dy <= 1 && dz <= 1;
+        return dx <= 0.5 && dy <= 0.5 && dz <= 0.5;
     }
 
     private Queue<PathPoint> reverse(Queue<PathPoint> points) {
@@ -168,7 +168,7 @@ public class AStarPathFinder {
 
     private PathPoint[] loadNeighbors(PathPoint point) {
         // TODO the priority of the straight paths should be higher than the priority of the diagonal paths
-        PathPoint[] neighbors = new PathPoint[18];
+        PathPoint[] neighbors = new PathPoint[6];
 
         neighbors[0] = new PathPoint(point.getX() + 1, point.getY() + 0, point.getZ() + 0, point);
         neighbors[1] = new PathPoint(point.getX() + 0, point.getY() + 1, point.getZ() + 0, point);
@@ -177,6 +177,8 @@ public class AStarPathFinder {
         neighbors[4] = new PathPoint(point.getX() + 0, point.getY() + -1, point.getZ() + 0, point);
         neighbors[5] = new PathPoint(point.getX() + 0, point.getY() + 0, point.getZ() + -1, point);
 
+        /*
+        TODO configurable if the path can contain diagonal lines
         neighbors[6] = new PathPoint(point.getX() + 1, point.getY() + 0, point.getZ() + -1, point);
         neighbors[7] = new PathPoint(point.getX() + -1, point.getY() + 0, point.getZ() + 1, point);
         neighbors[8] = new PathPoint(point.getX() + -1, point.getY() + 0, point.getZ() + -1, point);
@@ -190,6 +192,7 @@ public class AStarPathFinder {
         neighbors[15] = new PathPoint(point.getX() + -1, point.getY() + 1, point.getZ() + -1, point);
         neighbors[16] = new PathPoint(point.getX() + 1, point.getY() + 1, point.getZ() + -1, point);
         neighbors[17] = new PathPoint(point.getX() + -1, point.getY() + 1, point.getZ() + 1, point);
+        */
 
         return neighbors;
     }

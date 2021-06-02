@@ -5,6 +5,7 @@ import com.github.derrop.documents.Documents;
 import com.github.phantompowered.plugins.webchat.handler.WebChatWsHandler;
 import com.github.phantompowered.plugins.webchat.listener.ChatReceiveListener;
 import com.github.phantompowered.proxy.api.connection.ServiceConnection;
+import com.github.phantompowered.proxy.api.connection.ServiceConnector;
 import com.github.phantompowered.proxy.api.event.EventManager;
 import com.github.phantompowered.proxy.api.plugin.PluginContainer;
 import com.github.phantompowered.proxy.api.plugin.PluginState;
@@ -20,6 +21,8 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 @Plugin(
         id = "com.github.phantompowered.plugins.webchat",
@@ -48,6 +51,19 @@ public class WebChat {
         Thread.currentThread().setContextClassLoader(old);
 
         registry.getProviderUnchecked(EventManager.class).registerListener(container, new ChatReceiveListener(this));
+
+        Executors.newScheduledThreadPool(1).scheduleAtFixedRate(() -> {
+            for (ServiceConnection connection : registry.getProviderUnchecked(ServiceConnector.class).getOnlineClients()) {
+                Map<String, WsContext> sessions = connection.getProperty(WebChat.CONNECTION_SESSIONS_PROPERTY);
+                if (sessions != null) {
+                    String json = Documents.newDocument().append("ping", true).toString();
+
+                    for (WsContext ctx : sessions.values()) {
+                        ctx.send(json);
+                    }
+                }
+            }
+        }, 10, 10, TimeUnit.SECONDS);
     }
 
     private void readConfig(ServiceRegistry registry, Path path) {
@@ -68,8 +84,6 @@ public class WebChat {
     private void initWeb(ServiceRegistry registry, String host, int port, boolean allowSending) {
         Javalin javalin = Javalin.create(e -> e.showJavalinBanner = false).start(host, port);
         javalin.config.addStaticFiles("/web");
-
-        // TODO the connection shouldn't time out after some time doing nothing
 
         javalin.ws("/ws", wsHandler -> {
             // TODO timeout when no init message is received 10 seconds after connection

@@ -24,6 +24,7 @@
         <module>webchat</module>
         <module>fast-pickup</module>
         <module>priority-join</module>
+        <module>input-recorder</module>
     </modules>
 
     <repositories>
@@ -63,8 +64,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <source>11</source>
-                    <target>11</target>
+                    <source>8</source>
+                    <target>8</target>
                 </configuration>
             </plugin>
 

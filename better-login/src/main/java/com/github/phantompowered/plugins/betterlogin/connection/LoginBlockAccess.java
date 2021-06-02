@@ -8,6 +8,7 @@ import com.github.phantompowered.proxy.api.location.Location;
 import com.github.phantompowered.proxy.api.location.Vector;
 import com.github.phantompowered.proxy.connection.player.DefaultPlayer;
 import com.github.phantompowered.plugins.betterlogin.LoginPrepareListener;
+import net.kyori.adventure.text.Component;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -113,5 +114,10 @@ public class LoginBlockAccess implements BlockAccess {
     @Override
     public int getDimension() {
         return 0;
+    }
+
+    @Override
+    public Component[] getSignLines(@NotNull Location location) {
+        return new Component[0];
     }
 }
