@@ -19,7 +19,7 @@ public class PathPlayer {
 
     private final PacketRegistry packetRegistry;
 
-    public PathPlayer(ServiceRegistry registry) {
+    protected PathPlayer(ServiceRegistry registry) {
         this.packetRegistry = registry.getProviderUnchecked(PacketRegistry.class);
     }
 
