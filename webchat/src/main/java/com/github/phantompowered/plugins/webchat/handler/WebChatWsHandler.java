@@ -3,14 +3,24 @@ package com.github.phantompowered.plugins.webchat.handler;
 import com.github.derrop.documents.Documents;
 import com.github.phantompowered.plugins.webchat.ChatMode;
 import com.github.phantompowered.plugins.webchat.WebChat;
+import com.github.phantompowered.plugins.webchat.WebCommandSender;
+import com.github.phantompowered.proxy.api.command.CommandMap;
+import com.github.phantompowered.proxy.api.command.exception.CommandExecutionException;
+import com.github.phantompowered.proxy.api.command.exception.PermissionDeniedException;
+import com.github.phantompowered.proxy.api.command.result.CommandResult;
+import com.github.phantompowered.proxy.api.command.sender.CommandSender;
 import com.github.phantompowered.proxy.api.connection.ServiceConnection;
 import com.github.phantompowered.proxy.api.connection.ServiceConnector;
+import com.github.phantompowered.proxy.api.network.exception.CancelProceedException;
 import com.github.phantompowered.proxy.api.service.ServiceRegistry;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import io.javalin.websocket.WsContext;
 import io.javalin.websocket.WsMessageContext;
 import io.javalin.websocket.WsMessageHandler;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
+import net.kyori.adventure.text.serializer.plain.PlainComponentSerializer;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
@@ -109,6 +119,31 @@ public class WebChatWsHandler implements WsMessageHandler {
             ctx.send("{\"success\":false,\"message\":\"No message has been provided\"}");
             return;
         }
+
+        if (message.contains(" && ")) {
+            for (String line : message.split(" && ")) {
+                this.chat(ctx, connection, line);
+            }
+            return;
+        }
+
+        if (message.toLowerCase().startsWith(CommandMap.INGAME_PREFIX)) {
+            CommandSender sender = new WebCommandSender(this.webChat, ctx);
+
+            try {
+                CommandMap commandMap = this.registry.getProviderUnchecked(CommandMap.class);
+                if (commandMap.process(sender, message.substring(CommandMap.INGAME_PREFIX.length())) != CommandResult.NOT_FOUND) {
+                    return;
+                }
+
+                sender.sendMessage("Command not found");
+            } catch (final CommandExecutionException | PermissionDeniedException ex) {
+                sender.sendMessage("Unable to process command: " + ex.getMessage());
+            }
+
+            return;
+        }
+
         if (message.length() > 100) {
             ctx.send("{\"success\":false,\"message\":\"Message too long (max 100, was " + message.length() + ")\"}");
             return;
